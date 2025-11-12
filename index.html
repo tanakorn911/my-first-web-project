@@ -1,13 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my-first-web-project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ธนกร แก้วใหม่</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(circle at 20% 20%, #0f2027, #203a43, #2c5364);
+      animation: gradientMove 20s ease infinite;
+      background-size: 200% 200%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #fff;
+    }
+
+    /* การ์ดหลัก */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 60px 80px;
+      text-align: center;
+      animation: fadeIn 1.8s ease;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+
+    p {
+      font-size: 1.4em;
+      opacity: 0.9;
+      line-height: 1.8;
+    }
+
+    /* เอฟเฟกต์เคลื่อนไหวแบ็คกราวด์ */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* เอฟเฟกต์นกบิน */
+    .bird {
+      position: absolute;
+      font-size: 30px;
+      animation: fly 15s linear infinite;
+      opacity: 0.8;
+    }
+    .bird:nth-child(1) { top: 10%; animation-delay: 0s; }
+    .bird:nth-child(2) { top: 25%; animation-delay: 5s; font-size: 26px; }
+    .bird:nth-child(3) { top: 40%; animation-delay: 8s; font-size: 34px; }
+
+    @keyframes fly {
+      0% { left: -10%; transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { left: 110%; transform: translateY(0) rotate(0deg); }
+    }
+
+    /* แสงเคลื่อนไหว */
+    .light {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+      border-radius: 50%;
+      animation: float 12s ease-in-out infinite;
+      filter: blur(80px);
+      opacity: 0.6;
+    }
+
+    .light:nth-child(4) { top: 20%; left: 15%; animation-delay: 0s; }
+    .light:nth-child(5) { bottom: 20%; right: 20%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    /* เส้นเรืองแสง */
+    .glow-line {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #00c6ff, #0072ff, transparent);
+      animation: glowMove 4s linear infinite;
+    }
+
+    @keyframes glowMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+  </style>
 </head>
 <body>
+  <!-- นกบิน -->
+  <div class="bird">🦅</div>
+  <div class="bird">🕊️</div>
+  <div class="bird">🦜</div>
 
-    <h1>Hello, My Name is [Tanakorn Kaewmai]</h1>
+  <!-- แสงเคลื่อนไหว -->
+  <div class="light"></div>
+  <div class="light"></div>
 
+  <!-- การ์ดข้อมูล -->
+  <div class="card">
+    <h1>ธนกร แก้วใหม่</h1>
+    <p>สวัสดีครับ 👋<br>ยินดีที่ได้รู้จักครับ 🙏<br>Front-End Developer & Tech Enthusiast</p>
+  </div>
+
+  <!-- เส้นเรืองแสง -->
+  <div class="glow-line"></div>
 </body>
 </html>
